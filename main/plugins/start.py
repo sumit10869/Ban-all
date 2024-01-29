@@ -47,8 +47,8 @@ async def start(event):
     '''
     await event.reply(text, 
                       buttons=[
-                              [Button.inline("SET THUMB.", data="set"),
-                               Button.inline("REM THUMB.", data="rem")],        
+                              [Button.inline("𝗦𝗘𝗧 𝗧𝗛𝗨𝗠𝗕.", data="set"),
+                               Button.inline("𝗥𝗘𝗠 𝗧𝗛𝗨𝗠𝗕.", data="rem")],        
                               ])                             
     '''                          
     
