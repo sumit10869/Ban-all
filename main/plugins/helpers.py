@@ -36,13 +36,13 @@ def video_metadata(file):
 async def join(client, invite_link):
     try:
         await client.join_chat(invite_link)
-        return "Successfully joined the Channel ✅"
+        return "𝗦𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹𝗹𝘆 𝗷𝗼𝗶𝗻𝗲𝗱 𝘁𝗵𝗲 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 ✅"
     except UserAlreadyParticipant:
         return "User is already a participant."
     except (InviteHashInvalid, InviteHashExpired):
-        return "Could not join. Maybe your link is expired or Invalid 🚫"
+        return "𝗖𝗼𝘂𝗹𝗱 𝗻𝗼𝘁 𝗷𝗼𝗶𝗻. 𝗠𝗮𝘆𝗯𝗲 𝘆𝗼𝘂𝗿 𝗹𝗶𝗻𝗸 𝗶𝘀 𝗲𝘅𝗽𝗶𝗿𝗲𝗱 𝗼𝗿 𝗜𝗻𝘃𝗮𝗹𝗶𝗱 🚫"
     except FloodWait:
-        return "Too many requests, try again later 💣"
+        return "𝗧𝗼𝗼 𝗺𝗮𝗻𝘆 𝗿𝗲𝗾𝘂𝗲𝘀𝘁𝘀, 𝘁𝗿𝘆 𝗮𝗴𝗮𝗶𝗻 𝗹𝗮𝘁𝗲𝗿 💣"
     except Exception as e:
         print(e)
         return f"{e} \nCould not join, try joining manually."
