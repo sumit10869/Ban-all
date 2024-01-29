@@ -1,4 +1,4 @@
-# best_save_restricted_content_bot
+#
 # made by [๛MR๛R͜͡AJPUT๛](tg://openmessage?user_id=6607019861) 
 
  
