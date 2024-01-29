@@ -15,7 +15,7 @@ async def sett(event):
     msg = await button.get_reply_message()
     await event.delete()
     async with Invix.conversation(event.chat_id) as conv: 
-        xx = await conv.send_message("Send me any image for thumbnail as a `reply` to this message.")
+        xx = await conv.send_message("𝗦𝗲𝗻𝗱 𝗺𝗲 𝗮𝗻𝘆 𝗶𝗺𝗮𝗴𝗲 𝗳𝗼𝗿 𝘁𝗵𝘂𝗺𝗯𝗻𝗮𝗶𝗹.")
         x = await conv.get_reply()
         if not x.media:
             xx.edit("No media found.")
@@ -42,7 +42,7 @@ async def remt(event):
   
 @Invix.on(events.NewMessage(incoming=True, pattern=f"{S}"))
 async def start(event):
-    text = "👋 Hi, I am 'Save Restricted Content ' bot.\n\n✅ Send me the Link of any message of Restricted Channels to Clone it here.\nFor private channel's messages, send the Invite Link first.\n\n👨**Owner:** @Mrrajput90 \n**Support📞:** https://t.me/mrrajput00"
+    text = "👋 𝗛𝗶, 𝗜 𝗮𝗺 '𝗦𝗮𝘃𝗲 𝗥𝗲𝘀𝘁𝗿𝗶𝗰𝘁𝗲𝗱 𝗖𝗼𝗻𝘁𝗲𝗻𝘁 ' 𝗯𝗼𝘁.\n\n✅ 𝗦𝗲𝗻𝗱 𝗺𝗲 𝘁𝗵𝗲 𝗟𝗶𝗻𝗸 𝗼𝗳 𝗮𝗻𝘆 𝗺𝗲𝘀𝘀𝗮𝗴𝗲 𝗼𝗳 𝗥𝗲𝘀𝘁𝗿𝗶𝗰𝘁𝗲𝗱 𝗖𝗵𝗮𝗻𝗻𝗲𝗹𝘀 𝘁𝗼 𝗖𝗹𝗼𝗻𝗲 𝗶𝘁 𝗵𝗲𝗿𝗲.\n𝗙𝗼𝗿 𝗽𝗿𝗶𝘃𝗮𝘁𝗲 𝗰𝗵𝗮𝗻𝗻𝗲𝗹'𝘀 𝗺𝗲𝘀𝘀𝗮𝗴𝗲𝘀, 𝘀𝗲𝗻𝗱 𝘁𝗵𝗲 𝗜𝗻𝘃𝗶𝘁𝗲 𝗟𝗶𝗻𝗸 𝗳𝗶𝗿𝘀𝘁.\n\n👨**𝗢𝘄𝗻𝗲𝗿:** @i_am_axiko \n**𝗦𝘂𝗽𝗽𝗼𝗿𝘁📞:** https://t.me/ssccgl_preparation"
     #await start_srb(event, text)
     '''
     await event.reply(text, 
@@ -54,8 +54,8 @@ async def start(event):
     
     await event.reply(text, 
                       buttons=[
-                              [Button.inline("SET THUMB.", data="set"),
-                               Button.inline("REM THUMB.", data="rem")],
-                              [Button.url("🔰 Maintained and Developed by 🔰", url="tg://openmessage?user_id=6607019861")]])
+                              [Button.inline("𝗦𝗘𝗧 𝗧𝗛𝗨𝗠𝗕.", data="set"),
+                               Button.inline("𝗥𝗘𝗠 𝗧𝗛𝗨𝗠𝗕.", data="rem")],
+                              [Button.url("♥️𝗠𝗮𝗶𝗻𝘁𝗮𝗶𝗻𝗲𝗱 𝗮𝗻𝗱 𝗗𝗲𝘃𝗲𝗹𝗼𝗽𝗲𝗱 𝗯𝘆♥️", url="tg://openmessage?user_id=6875097279")]])
     
     
