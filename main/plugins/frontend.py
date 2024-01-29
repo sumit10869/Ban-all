@@ -21,7 +21,7 @@ logger = logging.getLogger(__name__)
 logging.getLogger("pyrogram").setLevel(logging.INFO)
 logging.getLogger("telethon").setLevel(logging.INFO)
 
-ft = f"To use this bot you've to join @{fs}./n/Also join  🔰 @mrrajput00 🔰"
+ft = f"To use this bot you've to join @{fs}./n/Also join  🔰 @ssccgl_preparation 🔰"
 
 message = "Send me the message link you want to start saving from, as a reply to this message."
           
@@ -58,9 +58,9 @@ async def clone(event):
         if s == True:
             await event.reply(r)
             return
-        edit = await event.reply("Processing!")
+        edit = await event.reply("𝙋𝙧𝙤𝙘𝙚𝙨𝙨𝙞𝙣𝙜!")
         if f'{int(event.sender_id)}' in user:
-            return await edit.edit("Please don't spam links, wait until ongoing process is done.")
+            return await edit.edit("𝗣𝗹𝗲𝗮𝘀𝗲 𝗱𝗼𝗻'𝘁 𝘀𝗽𝗮𝗺 𝗹𝗶𝗻𝗸𝘀, 𝘄𝗮𝗶𝘁 𝘂𝗻𝘁𝗶𝗹 𝗼𝗻𝗴𝗼𝗶𝗻𝗴 𝗽𝗿𝗼𝗰𝗲𝘀𝘀 𝗶𝘀 𝗱𝗼𝗻𝗲.")
         user.append(f'{int(event.sender_id)}')
         if "|" in li:
             url = li
