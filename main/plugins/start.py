@@ -28,7 +28,7 @@ async def sett(event):
         if os.path.exists(f'{event.sender_id}.jpg'):
             os.remove(f'{event.sender_id}.jpg')
         os.rename(path, f'./{event.sender_id}.jpg')
-        await t.edit("Temporary thumbnail saved!")
+        await t.edit("𝗧𝗲𝗺𝗽𝗼𝗿𝗮𝗿𝘆 𝘁𝗵𝘂𝗺𝗯𝗻𝗮𝗶𝗹 𝘀𝗮𝘃𝗲𝗱!")
         
 @Invix.on(events.callbackquery.CallbackQuery(data="rem"))
 async def remt(event):  
