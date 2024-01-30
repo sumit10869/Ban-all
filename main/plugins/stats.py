@@ -55,9 +55,8 @@ async def stats(event):
             f'SWAP: {swap_t} | Used: {swap_p}%\n'\
             f'Memory Total: {mem_t}\n'\
             f'Memory Free: {mem_a}\n'\
-            f'Memory Used: {mem_u}\n'\
-            f'Total User: {total_u}\n'
-    
+            f'Memory Used: {mem_u}\n'
+
     await event.reply(f"{stats}")
    #duz.edit(stats)
 
