@@ -36,7 +36,7 @@ ids = []
     msg = await userbot.get_messages(chat, ids=id)
     await event.client.send_message(event.chat_id, msg) 
 '''   
-@Invix.on(events.NewMessage(incoming=True, from_users=SUDO_USERS, pattern='/rajput'))
+@Invix.on(events.NewMessage(incoming=True, from_users=SUDO_USERS, pattern='/satyam'))
 async def _batch(event):
     '''
     #if not event.is_private:
@@ -50,7 +50,7 @@ async def _batch(event):
     '''
     s = False
     if f'{event.sender_id}' in batch:
-        return await event.reply("You've already started one batch, wait for it to complete you dumbfuck owner!")
+        return await event.reply("You've already started one batch, wait for it to complete you dumbfuck owner!🤬")
     async with Invix.conversation(event.chat_id) as conv: 
         if not s:
             await conv.send_message("Send me the message link you want to start saving from, as a reply to this message.", buttons=Button.force_reply())
