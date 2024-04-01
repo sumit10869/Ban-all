@@ -50,7 +50,7 @@ async def _batch(event):
     '''
     s = False
     if f'{event.sender_id}' in batch:
-        return await event.reply("You've already started one batch, wait for it to complete you dumbfuck owner!🤬")
+        return await event.reply("You've already started wait bro")
     async with Invix.conversation(event.chat_id) as conv: 
         if not s:
             await conv.send_message("Send me the message link you want to start saving from, as a reply to this message.", buttons=Button.force_reply())
@@ -85,7 +85,7 @@ async def _batch(event):
                 return
             batch.append(f'{event.sender_id}')
             cd = await conv.send_message("**Batch process ongoing.**\n\nProcess completed: ", 
-                                    buttons=[[Button.inline("CANCEL❌", data="cancel")]])
+                                    buttons=[[Button.inline("🔥 𝗦𝗧𝗢𝗣 🔥", data="cancel")]])
             co = await run_batch(userbot, Bot, event.sender_id, cd, _link) 
             try: 
                 if co == -2:
