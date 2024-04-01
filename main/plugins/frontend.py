@@ -21,7 +21,7 @@ logger = logging.getLogger(__name__)
 logging.getLogger("pyrogram").setLevel(logging.INFO)
 logging.getLogger("telethon").setLevel(logging.INFO)
 
-ft = f"To use this bot you've to join @{fs}./n/Also join  🔰 @official_satyam01 🔰"
+ft = f"To use this bot you've to join @{fs}./n/Also join  🔥 @𝗢𝗙𝗙𝗜𝗖𝗜𝗔𝗟_𝗦𝗔𝗧𝗬𝗔𝗠01 🔥"
 
 message = "Send me the message link you want to start saving from, as a reply to this message."
           
