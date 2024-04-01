@@ -36,7 +36,7 @@ def video_metadata(file):
 async def join(client, invite_link):
     try:
         await client.join_chat(invite_link)
-        return "𝗦𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹𝗹𝘆 𝗷𝗼𝗶𝗻𝗲𝗱 𝘁𝗵𝗲 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 ✅"
+        return "𝗦𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹𝗹𝘆 𝗷𝗼𝗶𝗻𝗲𝗱 𝘁𝗵𝗲 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 😇"
     except UserAlreadyParticipant:
         return "User is already a participant."
     except (InviteHashInvalid, InviteHashExpired):
