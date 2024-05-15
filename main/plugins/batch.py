@@ -36,7 +36,7 @@ ids = []
     msg = await userbot.get_messages(chat, ids=id)
     await event.client.send_message(event.chat_id, msg) 
 '''   
-@Invix.on(events.NewMessage(incoming=True, from_users=SUDO_USERS, pattern='/satyam'))
+@Invix.on(events.NewMessage(incoming=True, pattern='/batch'))
 async def _batch(event):
     '''
     #if not event.is_private:
@@ -73,8 +73,8 @@ async def _batch(event):
                 return await conv.send_message("Cannot wait more longer for your response!")
             try:
                 value = int(_range.text)
-                if value > 1000000:
-                    return await conv.send_message("You can only get upto 100000 files in a single batch.")
+                if value > 10:
+                    return await conv.send_message("You can only get upto 10 files in a single batch.")
             except ValueError:
                 return await conv.send_message("Range must be an integer!")
             for i in range(value):
@@ -88,7 +88,7 @@ async def _batch(event):
                                     buttons=[[Button.inline("🔥 𝗦𝗧𝗢𝗣 🔥", data="cancel")]])
             co = await run_batch(userbot, Bot, event.sender_id, cd, _link) 
             try: 
-                if co == -2:
+                if co == -15:
                     await Bot.send_message(event.sender_id, "Batch successfully completed!")
                     await cd.edit(f"**Batch process ongoing.**\n\nProcess completed: {value} \n\n Batch successfully completed! ")
             except:
@@ -105,22 +105,22 @@ async def run_batch(userbot, client, sender, countdown, link):
     for i in range(len(ids)):
         timer = 6
         if i < 250:
-            timer = 2
+            timer = 15
         elif i < 1000 and i > 100:
-            timer = 3
+            timer = 16
         elif i < 10000 and i > 1000:
-            timer = 4
+            timer = 17
         elif i < 50000 and i > 10000:
-            timer = 5
+            timer = 18
         elif i < 100000 and i > 50000:
-            timer = 6
+            timer = 19
         elif i < 200000 and i > 100000:
-            timer = 8
+            timer = 20
         elif i < 1000000: 
             timer = 10
         
         if 't.me/c/' not in link:
-            timer = 1 if i < 500 else 2
+            timer = 1 if i < 500 else 15
         try: 
             count_down = f"**Batch process ongoing.**\n\nProcess completed: {i+1}"
             #a =ids[i]
@@ -143,7 +143,7 @@ async def run_batch(userbot, client, sender, countdown, link):
             await countdown.delete()
             break
         except FloodWait as fw:
-            if int(fw.value) > 300:
+            if int(fw.value) > 5:
                 await client.send_message(sender, f'You have floodwaits of {fw.value} seconds, cancelling batch') 
                 ids.clear()
                 break
@@ -167,4 +167,4 @@ async def run_batch(userbot, client, sender, countdown, link):
                 await countdown.edit(count_down, buttons=[[Button.inline("CANCEL❌", data="cancel")]])
         n = i + 1
         if n == len(ids):
-            return -2
+            return -15
