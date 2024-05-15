@@ -73,8 +73,8 @@ async def _batch(event):
                 return await conv.send_message("Cannot wait more longer for your response!")
             try:
                 value = int(_range.text)
-                if value > 100:
-                    return await conv.send_message("You can only get upto 100 files in a single batch.")
+                if value > 100000:
+                    return await conv.send_message("You can only get upto 100000 files in a single batch.")
             except ValueError:
                 return await conv.send_message("Range must be an integer!")
             for i in range(value):
@@ -88,7 +88,7 @@ async def _batch(event):
                                     buttons=[[Button.inline("🔥 𝗦𝗧𝗢𝗣 🔥", data="cancel")]])
             co = await run_batch(userbot, Bot, event.sender_id, cd, _link) 
             try: 
-                if co == -15:
+                if co == -2:
                     await Bot.send_message(event.sender_id, "Batch successfully completed!")
                     await cd.edit(f"**Batch process ongoing.**\n\nProcess completed: {value} \n\n Batch successfully completed! ")
             except:
@@ -105,22 +105,22 @@ async def run_batch(userbot, client, sender, countdown, link):
     for i in range(len(ids)):
         timer = 6
         if i < 250:
-            timer = 15
+            timer = 2
         elif i < 1000 and i > 100:
-            timer = 20
+            timer = 3
         elif i < 10000 and i > 1000:
-            timer = 25
+            timer = 4
         elif i < 50000 and i > 10000:
-            timer = 30
+            timer = 5
         elif i < 100000 and i > 50000:
-            timer = 35
+            timer = 6
         elif i < 200000 and i > 100000:
-            timer = 40
+            timer = 8
         elif i < 1000000: 
-            timer = 45
+            timer = 10
         
         if 't.me/c/' not in link:
-            timer = 5 if i < 500 else 10
+            timer = 1 if i < 500 else 2
         try: 
             count_down = f"**Batch process ongoing.**\n\nProcess completed: {i+1}"
             #a =ids[i]
