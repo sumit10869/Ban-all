@@ -36,7 +36,7 @@ ids = []
     msg = await userbot.get_messages(chat, ids=id)
     await event.client.send_message(event.chat_id, msg) 
 '''   
-@Invix.on(events.NewMessage(incoming=True, pattern='/batch'))
+@Invix.on(events.NewMessage(incoming=True, from_users=SUDO_USERS, pattern='/batch'))
 async def _batch(event):
     '''
     #if not event.is_private:
@@ -73,8 +73,8 @@ async def _batch(event):
                 return await conv.send_message("Cannot wait more longer for your response!")
             try:
                 value = int(_range.text)
-                if value > 100000:
-                    return await conv.send_message("You can only get upto 100000 files in a single batch.")
+                if value > 1000:
+                    return await conv.send_message("You can only get upto 1000 files in a single batch.")
             except ValueError:
                 return await conv.send_message("Range must be an integer!")
             for i in range(value):
@@ -105,11 +105,11 @@ async def run_batch(userbot, client, sender, countdown, link):
     for i in range(len(ids)):
         timer = 6
         if i < 250:
-            timer = 15
+            timer = 5
         elif i < 1000 and i > 100:
-            timer = 20
+            timer = 10
         elif i < 10000 and i > 1000:
-            timer = 30
+            timer = 15
         elif i < 50000 and i > 10000:
             timer = 5
         elif i < 100000 and i > 50000:
