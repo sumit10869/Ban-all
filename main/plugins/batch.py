@@ -73,8 +73,8 @@ async def _batch(event):
                 return await conv.send_message("Cannot wait more longer for your response!")
             try:
                 value = int(_range.text)
-                if value > 10000:
-                    return await conv.send_message("You can only get upto 10k files in a single batch.")
+                if value > 100:
+                    return await conv.send_message("You can only get upto 100 files in a single batch.")
             except ValueError:
                 return await conv.send_message("Range must be an integer!")
             for i in range(value):
@@ -105,9 +105,9 @@ async def run_batch(userbot, client, sender, countdown, link):
     for i in range(len(ids)):
         timer = 6
         if i < 250:
-            timer = 5
+            timer = 45
         elif i < 1000 and i > 100:
-            timer = 10
+            timer = 120
         elif i < 10000 and i > 1000:
             timer = 15
         elif i < 50000 and i > 10000:
@@ -135,7 +135,7 @@ async def run_batch(userbot, client, sender, countdown, link):
             await get_bulk_msg(userbot, client, sender, link, integer)
             protection = await client.send_message(sender, f"Sleeping for `{timer}` seconds to avoid Floodwaits and Protect account!")
             await countdown.edit(count_down, 
-                                 buttons=[[Button.inline("CANCEL❌", data="cancel")]])
+                                 buttons=[[Button.inline("🔥 𝗦𝗧𝗢𝗣 🔥", data="cancel")]])
             await asyncio.sleep(timer)
             await protection.delete()
         except IndexError as ie:
@@ -158,13 +158,13 @@ async def run_batch(userbot, client, sender, countdown, link):
                     #print(e)
                     logger.info(e)
                     if countdown.text != count_down:
-                        await countdown.edit(count_down, buttons=[[Button.inline("CANCEL❌", data="cancel")]])
+                        await countdown.edit(count_down, buttons=[[Button.inline("🔥 𝗦𝗧𝗢𝗣 🔥", data="cancel")]])
         except Exception as e:
             #print(e)
             logger.info(e)
             await client.send_message(sender, f"An error occurred during cloning, batch will continue.\n\n**Error:** {str(e)}")
             if countdown.text != count_down:
-                await countdown.edit(count_down, buttons=[[Button.inline("CANCEL❌", data="cancel")]])
+                await countdown.edit(count_down, buttons=[[Button.inline("🔥 𝗦𝗧𝗢𝗣 🔥", data="cancel")]])
         n = i + 1
         if n == len(ids):
             return -2
